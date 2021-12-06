@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def matrix_transpose(matrix):
     """ Function to transpose a matrix """
     rows = len(matrix)
