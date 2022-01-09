@@ -13,3 +13,14 @@ def forward_prop(x, layer_sizes=[], activations=[]):
     Returns: the prediction of the network in tensor form
 
     """
+    if len(activations) == 1:
+        a = activations[0]
+    else:
+        a = None
+
+    for i, n in enumerate(layer_sizes):
+        if a is not None:
+            fp = create_layer(x, n, a)
+        else:
+            fp = create_layer(x, n, activations[i])
+    return fp
